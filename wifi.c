@@ -1,14 +1,11 @@
 /* ========================================
+ * Author: Jeremy Crowley
+ * File: wifi.c
  *
- * Copyright YOUR COMPANY, THE YEAR
- * All Rights Reserved
- * UNPUBLISHED, LICENSED SOFTWARE.
- *
- * CONFIDENTIAL AND PROPRIETARY INFORMATION
- * WHICH IS THE PROPERTY OF your company.
- *
+ * Purpose: This file provides the functions for the wifi communication
+ * through the LaunchPad - CC3200
  * ========================================
-*/
+ */
 
 #include "wifi.h"
 

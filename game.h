@@ -1,14 +1,12 @@
 /* ========================================
+ * Author: Jeremy Crowley
+ * File: game.h
  *
- * Copyright YOUR COMPANY, THE YEAR
- * All Rights Reserved
- * UNPUBLISHED, LICENSED SOFTWARE.
- *
- * CONFIDENTIAL AND PROPRIETARY INFORMATION
- * WHICH IS THE PROPERTY OF your company.
- *
+ * Purpose: This file provides datatypes and functions headers
+ * for controling the LED array for the game board
  * ========================================
-*/
+ */
+
 #ifndef GAME_H
 #define GAME_H
 

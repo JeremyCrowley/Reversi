@@ -1,14 +1,13 @@
 /* ========================================
+ * Author: Jeremy Crowley
+ * File: com.h
  *
- * Copyright YOUR COMPANY, THE YEAR
- * All Rights Reserved
- * UNPUBLISHED, LICENSED SOFTWARE.
- *
- * CONFIDENTIAL AND PROPRIETARY INFORMATION
- * WHICH IS THE PROPERTY OF your company.
- *
+ * Purpose: This file provides the datatypes for sending and receiving
+ * packets through a UART communication link and the funciton headers
+ * that assemble and parse the packets
  * ========================================
-*/
+ */
+
 #ifndef COM_H
 #define COM_H
 

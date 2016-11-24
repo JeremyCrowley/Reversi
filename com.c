@@ -1,14 +1,11 @@
 /* ========================================
+ * Author: Jeremy Crowley
+ * File: com.c
  *
- * Copyright YOUR COMPANY, THE YEAR
- * All Rights Reserved
- * UNPUBLISHED, LICENSED SOFTWARE.
- *
- * CONFIDENTIAL AND PROPRIETARY INFORMATION
- * WHICH IS THE PROPERTY OF your company.
- *
+ * Purpose: This file provides the functions for UART communication
  * ========================================
-*/
+ */
+
 #include "com.h"
 
 #define ASCI_DIFF 48

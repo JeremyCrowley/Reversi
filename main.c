@@ -1,14 +1,9 @@
 /* ========================================
- *
- * Copyright YOUR COMPANY, THE YEAR
- * All Rights Reserved
- * UNPUBLISHED, LICENSED SOFTWARE.
- *
- * CONFIDENTIAL AND PROPRIETARY INFORMATION
- * WHICH IS THE PROPERTY OF your company.
- *
+ * Author: Jeremy Crowley
+ * File: main.c
  * ========================================
-*/
+ */
+
 #include <project.h>
 #include "game.h"
 #include "com.h"

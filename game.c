@@ -1,15 +1,11 @@
 /* ========================================
+ * Author: Jeremy Crowley
+ * File: game.c
  *
- * Copyright YOUR COMPANY, THE YEAR
- * All Rights Reserved
- * UNPUBLISHED, LICENSED SOFTWARE.
- *
- * CONFIDENTIAL AND PROPRIETARY INFORMATION
- * WHICH IS THE PROPERTY OF your company.
- *
+ * Purpose: This file provides all the functions for 
+ * controlling the game board
  * ========================================
-*/
-
+ */
 
 #include "game.h"
 #include "com.h"
