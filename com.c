@@ -11,6 +11,8 @@
 */
 #include "com.h"
 
+#define ASCI_DIFF 48
+#define TENS 10
 
 void BuildSendPacket(uint8_t packet[SEND_SIZE], uint8_t seg, uint8_t pass, uint8_t rowHigh, uint8_t rowLow, uint8_t colHigh, uint8_t colLow)
 {
@@ -32,15 +34,15 @@ void BuildSendPacket(uint8_t packet[SEND_SIZE], uint8_t seg, uint8_t pass, uint8
     
     packet[13] = 0x20;
     
-    packet[14] = Hundreds(seg) + 48;
-    packet[15] = Tens(seg, packet[9]) + 48;
-    packet[16] = Ones(seg, packet[9], packet[10]) + 48;
+    packet[14] = Hundreds(seg) + ASCI_DIFF;
+    packet[15] = Tens(seg, packet[9]) + ASCI_DIFF;
+    packet[16] = Ones(seg, packet[9], packet[10]) + ASCI_DIFF;
     
-    packet[17] = pass+48;
-    packet[18] = rowHigh + 48;
-    packet[19] = rowLow + 48;
-    packet[20] = colHigh + 48;
-    packet[21] = colLow + 48;
+    packet[17] = pass + ASCI_DIFF;
+    packet[18] = rowHigh + ASCI_DIFF;
+    packet[19] = rowLow + ASCI_DIFF;
+    packet[20] = colHigh + ASCI_DIFF;
+    packet[21] = colLow + ASCI_DIFF;
     
     packet[22] = '\n';
 
@@ -48,9 +50,9 @@ void BuildSendPacket(uint8_t packet[SEND_SIZE], uint8_t seg, uint8_t pass, uint8
 
 void ParsePacket(uint8_t packet[SEND_SIZE - 3], int idEnd)
 {
-    receiveData.pass = packet[idEnd+6]-48;
-    receiveData.row = (10*(packet[idEnd+7]-48)+(packet[idEnd+8]-48));
-    receiveData.col = (10*(packet[idEnd+9]-48)+(packet[idEnd+10]-48));
+    receiveData.pass = packet[idEnd+6]-ASCI_DIFF;
+    receiveData.row = (TENS*(packet[idEnd+7]-ASCI_DIFF)+(packet[idEnd+8]-ASCI_DIFF));
+    receiveData.col = (TENS*(packet[idEnd+9]-ASCI_DIFF)+(packet[idEnd+10]-ASCI_DIFF));
     
     if(receiveData.row != 0)
     {
@@ -79,6 +81,7 @@ uint8_t Ones(uint8_t num, uint8_t hundreds, uint8_t tens)
 
 bool newData(uint8_t currentSeq)
 {
+    // make sure that the sequence num recieve is one more that the last
     if(currentSeq == (receiveData.seq + 1))
     {
         return true;   

@@ -1,20 +1,21 @@
 /* ========================================
+ * Author: Jeremy Crowley
+ * File: wifi.h
  *
- * Copyright YOUR COMPANY, THE YEAR
- * All Rights Reserved
- * UNPUBLISHED, LICENSED SOFTWARE.
- *
- * CONFIDENTIAL AND PROPRIETARY INFORMATION
- * WHICH IS THE PROPERTY OF your company.
- *
+ * Purpose: This file provides the enums and headers for the wifi communication
+ * through the LaunchPad - CC3200
  * ========================================
-*/
+ */
+
+#ifndef WIFI_H
+#define WIFI_H
 
 #include <project.h>
 #include "com.h"
 
 #define AD_SIZE 17
 #define IP_STRLEN 13
+
 
 typedef enum
 {
@@ -28,7 +29,15 @@ typedef enum
     CONNECT,
 } SETUP_STATES;
 
-uint32_t IpVal(char string[13]);
+
+/* @desc - This function will take in the IP address as a string and return 
+ * the address as a 32 bit value
+ *
+ * @param - the ip address of the other player as a string
+ * @return - the ip address of the other player as a uint32
+ */ 
+uint32_t IpVal(char string[IP_STRLEN]);
 
 
-/* [] END OF FILE */
+#endif 
+/* WIFI_H */

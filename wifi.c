@@ -12,17 +12,20 @@
 
 #include "wifi.h"
 
+#define ASCI_DIFF 48
+#define TENS 10
+#define HUNDREDS 100
 
-uint32_t IpVal(char string[13])
+uint32_t IpVal(char string[IP_STRLEN])
 {
     uint32_t val = 0;
     
     uint32_t first = 0, second = 0, third = 0, fourth = 0;
     
-    first = ((string[12]-48) + 10*(string[11]-48) + 100*(string[10]-48));
-    second = (string[8]-48) << 8;
-    third = ((string[6]-48) + 10*(string[5]-48) + 100*(string[4]-48)) << 16;
-    fourth = ((string[2]-48) + 10*(string[1]-48) + 100*(string[0]-48));
+    first = ((string[12]-ASCI_DIFF) + TENS*(string[11]-ASCI_DIFF) + HUNDREDS*(string[10]-ASCI_DIFF));
+    second = (string[8]-ASCI_DIFF) << 8;
+    third = ((string[6]-ASCI_DIFF) + TENS*(string[5]-ASCI_DIFF) + HUNDREDS*(string[4]-ASCI_DIFF)) << 16;
+    fourth = ((string[2]-ASCI_DIFF) + TENS*(string[1]-ASCI_DIFF) + HUNDREDS*(string[0]-ASCI_DIFF));
     
     val = first + second + third + fourth;
     

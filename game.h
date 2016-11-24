@@ -19,6 +19,8 @@
 #define ROW_SIZE 4
 #define TRUE 1
 #define FALSE 0
+#define IP_STRLEN 13
+#define ID_LEN 8
 
 #define UP 'w'
 #define DOWN 's'
@@ -35,8 +37,8 @@ struct Player
     uint16_t score;
     bool turn;
     uint32_t ipVal;
-    char IP[13];
-    char ID[8];
+    char IP[IP_STRLEN];
+    char ID[ID_LEN];
 };
 
 typedef struct Player player_t;
@@ -46,8 +48,6 @@ player_t player2;
 uint8_t red[ROW_SIZE][ROW_SIZE]; // red
 uint8_t cursor[ROW_SIZE][ROW_SIZE]; // green
 uint8_t blue[ROW_SIZE][ROW_SIZE]; // blue
-
-
 
 struct Cursor
 {
@@ -61,7 +61,6 @@ cursor_t diskSelect;
 
 /* initializes the game, sets cursor at the top left and set first 4 tokens */
 void StartGame(uint8_t blue[ROW_SIZE][ROW_SIZE], uint8_t red[ROW_SIZE][ROW_SIZE]);
-
 
 /* updates the display based on the three arrays and board size */
 void UpdateBoard(int i, int j, uint8_t **redPosition, uint8_t **greenPosition, uint8_t **bluePosition, uint8_t rowSize);
@@ -89,6 +88,5 @@ void DisplayScore(bool gameOver, bool myTurn);
 void GameUpdate(void);
 
 
-#endif
-
-/* [] END OF FILE */
+#endif 
+/* GAME_H */
